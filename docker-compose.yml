@@ -12,8 +12,6 @@ services:
     security_opt:
       - apparmor:unconfined
     volumes:
-      - "netdatalib-master:/var/lib/netdata"
-      - "netdatacache-master:/var/cache/netdata"
       - "/etc/passwd:/host/etc/passwd:ro"
       - "/etc/group:/host/etc/group:ro"
       - "/proc:/host/proc:ro"
@@ -33,8 +31,6 @@ services:
     security_opt:
       - apparmor:unconfined
     volumes:
-      - "netdatalib-slave:/var/lib/netdata"
-      - "netdatacache-slave:/var/cache/netdata"
       - "/etc/passwd:/host/etc/passwd:ro"
       - "/etc/group:/host/etc/group:ro"
       - "/proc:/host/proc:ro"
@@ -42,8 +38,3 @@ services:
       - "/etc/os-release:/host/etc/os-release:ro"
       - "./netdata-slave-etc:/etc/netdata/"
 
-volumes:
-  netdatalib-master:
-  netdatacache-master:
-  netdatalib-slave:
-  netdatacache-slave:
